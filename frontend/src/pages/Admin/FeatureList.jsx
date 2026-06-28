@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import Navbar from "../../components/Navbar.jsx";
 
+import { getUser } from "../../utils/storage.js";
+
 import {
   deleteFeature,
   getAllFeatures,
@@ -13,6 +15,8 @@ import "./FeatureList.css";
 
 const FeatureList = () => {
   const navigate = useNavigate();
+
+  const user = getUser();
 
   const [features, setFeatures] = useState([]);
 
@@ -77,10 +81,11 @@ const FeatureList = () => {
       <div className="feature-list-container">
         <div className="feature-list-header">
           <h2>Feature List</h2>
-
-          <button onClick={() => navigate("/admin/create-feature")}>
-            Create Feature
-          </button>
+          {user.role !== "USER" && (
+            <button onClick={() => navigate("/admin/create-feature")}>
+              Create Feature
+            </button>
+          )}
         </div>
 
         {loading ? (
@@ -111,21 +116,25 @@ const FeatureList = () => {
                   <td>{feature.enabled ? "Enabled" : "Disabled"}</td>
 
                   <td className="action-buttons">
-                    <button
-                      onClick={() =>
-                        navigate(`/admin/edit-feature/${feature._id}`)
-                      }
-                    >
-                      Edit
-                    </button>
+                    {user.role !== "USER" && (
+                      <button
+                        onClick={() =>
+                          navigate(`/admin/edit-feature/${feature._id}`)
+                        }
+                      >
+                        Edit
+                      </button>
+                    )}
 
                     <button onClick={() => handleToggle(feature._id)}>
                       {feature.enabled ? "Disable" : "Enable"}
                     </button>
 
-                    <button onClick={() => handleDelete(feature._id)}>
-                      Delete
-                    </button>
+                    {user.role !== "USER" && (
+                      <button onClick={() => handleDelete(feature._id)}>
+                        Delete
+                      </button>
+                    )}
                   </td>
                 </tr>
               ))}

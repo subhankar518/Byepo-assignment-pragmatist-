@@ -18,7 +18,7 @@ const getOrganizationById = async (organizationId) => {
 };
 
 const updateOrganization = async (organizationId, data) => {
-  const response = await api.patch(
+  const response = await api.put(
     `/organizations/update-organization/${organizationId}`,
     data,
   );

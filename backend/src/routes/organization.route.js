@@ -42,12 +42,12 @@ organizationRouter.delete(
 
 // Extra Functionality
 
-// organizationRouter.put(
-//     "/update-organization/:organizationId",
-//     authHandler,
-//     authorizeRoles("SUPER-ADMIN"),
-//     updateOrganization
-// );
+organizationRouter.put(
+    "/update-organization/:organizationId",
+    authHandler,
+    authorizeRoles("SUPER-ADMIN"),
+    updateOrganization
+);
 
 // organizationRouter.get(
 //     "/get-user-organizations/:userId",
