@@ -1,0 +1,64 @@
+.create-organization-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.create-organization-form {
+  width: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 5px;
+}
+
+.create-organization-form h2 {
+  text-align: center;
+}
+
+.create-organization-form input,
+.create-organization-form textarea {
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  font-size: 16px;
+}
+
+.create-organization-form textarea {
+  resize: vertical;
+}
+
+.create-organization-form button {
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background-color: #2563eb;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.create-organization-form button:hover {
+  background-color: #1d4ed8;
+}
+
+.create-organization-form button:disabled {
+  background-color: #94a3b8;
+
+  cursor: not-allowed;
+}

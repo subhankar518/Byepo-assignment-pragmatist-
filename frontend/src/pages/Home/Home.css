@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f8fafc;
+}
+
+.home-card {
+  width: 420px;
+
+  padding: 40px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+}
+
+.home-card h1 {
+  margin-bottom: 15px;
+
+  color: #1e293b;
+
+  font-size: 30px;
+}
+
+.home-description {
+  margin-bottom: 35px;
+
+  color: #64748b;
+
+  line-height: 1.6;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.home-buttons button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.login-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.login-btn:hover {
+  background: #1d4ed8;
+}
+
+.signup-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.signup-btn:hover {
+  background: #15803d;
+}
+
+@media (max-width: 480px) {
+  .home-card {
+    width: 90%;
+
+    padding: 30px 20px;
+  }
+
+  .home-card h1 {
+    font-size: 24px;
+  }
+}

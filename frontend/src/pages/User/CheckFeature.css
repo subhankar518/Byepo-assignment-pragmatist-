@@ -1,0 +1,74 @@
+.check-feature-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.check-feature-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  background: #fff;
+}
+
+.check-feature-form h2 {
+  text-align: center;
+}
+
+.check-feature-form input,
+.check-feature-form select {
+  width: 100%;
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  font-size: 16px;
+}
+
+.check-feature-form button {
+  padding: 10px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #2563eb;
+  color: white;
+
+  cursor: pointer;
+}
+
+.check-feature-form button:hover {
+  background: #1d4ed8;
+}
+
+.check-feature-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.feature-result {
+  margin-top: 20px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  background: #fff;
+}
+
+.feature-result h3 {
+  margin-bottom: 15px;
+}
+
+.feature-result p {
+  margin-bottom: 10px;
+}

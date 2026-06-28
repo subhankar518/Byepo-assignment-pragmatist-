@@ -1,0 +1,75 @@
+.create-feature-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.create-feature-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  padding: 20px;
+
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  background: #fff;
+}
+
+.create-feature-form h2 {
+  text-align: center;
+}
+
+.create-feature-form input,
+.create-feature-form textarea,
+.create-feature-form select {
+  width: 100%;
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  font-size: 16px;
+}
+
+.create-feature-form textarea {
+  resize: vertical;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 16px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.create-feature-form button {
+  padding: 10px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.create-feature-form button:hover {
+  background: #1d4ed8;
+}
+
+.create-feature-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}

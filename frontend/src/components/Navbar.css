@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-right button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
