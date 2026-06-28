@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navbar from "../../components/Navbar.jsx";
 
 import { checkFeatureStatus } from "../../services/feature.service";
+import { getOrganizations } from "../../services/organization.service";
 import { getUser } from "../../utils/storage";
 
 import "./CheckFeature.css";
@@ -10,7 +11,7 @@ import "./CheckFeature.css";
 const CheckFeature = () => {
   const user = getUser();
 
-  const organizations = user?.organization || [];
+  const [organizations, setOrganizations] = useState([]);
 
   const [formData, setFormData] = useState({
     featureKey: "",
@@ -21,6 +22,24 @@ const CheckFeature = () => {
   const [feature, setFeature] = useState(null);
 
   const [loading, setLoading] = useState(false);
+
+  const fetchOrganizations = async () => {
+    try {
+      setLoading(true);
+
+      const response = await getOrganizations();
+
+      setOrganizations(response.data || []);
+    } catch (error) {
+      alert(error.response?.data?.message || "Failed to fetch organizations.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrganizations();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -79,10 +98,10 @@ const CheckFeature = () => {
 
             {organizations.map((organization) => (
               <option
-                key={organization._id || organization}
-                value={organization._id || organization}
+                key={organization?._id || organization?.name}
+                value={organization?._id || organization?.name}
               >
-                {organization.name || organization}
+                {organization?.name || organization?._id}
               </option>
             ))}
           </select>
